@@ -1,10 +1,10 @@
 {
   "name": "coodde-vue3-tour",
-  "version": "0.4.0",
+  "version": "0.4.2",
   "scripts": {
     "check": "vue-tsc --noEmit",
     "dev": "vite",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly > /dev/null 2>&1",
     "serve": "vite preview",
     "lint": "eslint --ext .ts,.vue --ignore-path .gitignore --fix src",
     "format": "prettier .  --write"
