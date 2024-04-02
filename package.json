@@ -1,6 +1,6 @@
 {
   "name": "coodde-vue3-tour",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "scripts": {
     "check": "vue-tsc --noEmit",
     "dev": "vite",
