@@ -1,6 +1,6 @@
 {
   "name": "coodde-vue3-tour",
-  "version": "0.4.3",
+  "version": "0.4.5",
   "scripts": {
     "check": "vue-tsc --noEmit",
     "dev": "vite",
@@ -31,9 +31,9 @@
     "src",
     "types"
   ],
-  "main": "dist/vue3-tour.umd.js",
-  "browser": "dist/vue3-tour.umd.js",
-  "module": "dist/vue3-tour.es.js",
+  "main": "dist/coodde-vue3-tour.umd.js",
+  "browser": "dist/coodde-vue3-tour.umd.js",
+  "module": "dist/coodde-vue3-tour.es.js",
   "types": "types/vue3-tour.d.ts",
   "repository": {
     "type": "git",
