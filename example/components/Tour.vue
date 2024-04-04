@@ -84,7 +84,7 @@
 <style lang="scss">
   .v-steps {
     > div {
-      margin: 330px auto;
+      margin: 10px auto;
       padding: 10px;
       width: 50%;
     }
