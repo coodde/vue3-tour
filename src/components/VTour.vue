@@ -20,7 +20,7 @@
         v-if="steps[currentStep]"
         :key="currentStep"
         :step="steps[currentStep]"
-        :step-id="currentStep"
+        :step-id="`${currentStep}-${name}`"
         :previous-step="previousStep"
         :next-step="nextStep"
         :stop="stop"
@@ -262,6 +262,7 @@
       onMounted(() => {
         const app = getCurrentInstance();
         app!.appContext.config.globalProperties.$tours[props.name] = {
+          name: props.name,
           step,
           start,
           isRunning,

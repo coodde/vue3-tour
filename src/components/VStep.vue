@@ -79,7 +79,6 @@
   } from 'vue';
   import { createPopper } from '@popperjs/core';
   import jump from 'jump.js';
-  import sum from 'hash-sum';
 
   import {
     DEFAULT_STEP_OPTIONS,
@@ -87,6 +86,7 @@
     BACKDROP,
   } from '../shared/constants';
   import type { Labels, Step } from '../shared/types';
+  import { default as hashCode } from '../shared/hash';
 
   export default defineComponent({
     name: 'VStep',
@@ -153,15 +153,12 @@
     },
     emits: ['targetNotFound', 'target-element'],
     setup(props, context) {
-      const isStringTarget =
+      const targetElement =
         typeof props.step.target === 'string' ||
-        props.step.target instanceof String;
-      const targetElement = isStringTarget
-        ? (document.querySelector(props.step.target) as HTMLElement)
-        : props.step.target?.value;
-      const hash = sum(
-        isStringTarget ? props.step.target : `e-ref|${props.stepId}`,
-      );
+        props.step.target instanceof String
+          ? (document.querySelector(props.step.target) as HTMLElement)
+          : props.step.target?.value;
+      const hash = hashCode(props.stepId);
 
       const params = computed(() => {
         return {

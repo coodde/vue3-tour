@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
-    "hash-sum": "^2.0.0",
-    "jump.js": "^1.0.2", 
+    "jump.js": "^1.0.2",
     "vue": "^3.2.37"
   },
   "devDependencies": {
