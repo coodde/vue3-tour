@@ -4,7 +4,7 @@
   "scripts": {
     "check": "vue-tsc --noEmit",
     "dev": "vite",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly > /dev/null 2>&1",
+    "build": "vite build",
     "serve": "vite preview",
     "lint": "eslint --ext .ts,.vue --ignore-path .gitignore --fix src",
     "format": "prettier .  --write"
