@@ -1,7 +1,5 @@
 # Coodde :: Vue3 Tour
 
-Forked from [vue-tour](https://github.com/pulsardev/vue-tour) / [vue3-tour](https://github.com/alexandreDavid/vue3-tour)
-
 > Coodde Vue Tour is a lightweight, simple and customizable tour plugin for use with Vue 3.
 > It provides a quick and easy way to guide your users through your application.
 
@@ -47,13 +45,13 @@ Also don't forget to include the styles. You can add the styles provided by defa
 ```javascript
 import { createApp } from 'vue';
 import App from './App.vue';
-import Vue3Tour from 'vue3-tour';
+import CooddeVue3Tour from 'coodde-vue3-tour';
 
-import 'vue3-tour/dist/vue3-tour.css';
+import 'coodde-vue3-tour/dist/vue3-tour.css';
 
 const app = createApp(App);
 
-app.use(Vue3Tour);
+app.use(CooddeVue3Tour);
 
 app.mount('#app');
 ```
