@@ -136,6 +136,12 @@
 
       const step = computed(() => props.steps[currentStep.value]);
 
+      const handleTargetPosition = () => {
+        targetRect.value = targetElement.value
+          ? targetElement.value.getBoundingClientRect()
+          : { left: 0, top: 0, right: 0, bottom: 0 };
+      };
+
       const start = async (startStep: string) => {
         // Wait for the DOM to be loaded, then start the tour
         const startStepIdx =
@@ -158,6 +164,7 @@
           }
         }
         await process();
+        handleTargetPosition();
         return Promise.resolve();
       };
 
@@ -179,6 +186,7 @@
             }
           }
           await process();
+          handleTargetPosition();
         }
         return Promise.resolve();
       };
@@ -201,6 +209,7 @@
             }
           }
           await process();
+          handleTargetPosition();
         }
         return Promise.resolve();
       };
@@ -221,18 +230,12 @@
         stop();
       };
 
-      const handleScroll = () => {
-        targetRect.value = targetElement.value
-          ? targetElement.value.getBoundingClientRect()
-          : { left: 0, top: 0, right: 0, bottom: 0 };
-      };
-
       const handleResize = () => {
         viewport.value = {
           width: document.documentElement.clientWidth,
           height: document.documentElement.clientHeight,
         };
-        handleScroll();
+        handleTargetPosition();
       };
 
       const handleKeyup = (e: KeyboardEvent) => {
@@ -284,7 +287,7 @@
           window.addEventListener('keyup', handleKeyup);
         }
         if (customOptions.value.backdrop) {
-          window.addEventListener('scroll', handleScroll);
+          window.addEventListener('scroll', handleTargetPosition);
           window.addEventListener('resize', handleResize);
         }
       });
@@ -294,7 +297,7 @@
           window.removeEventListener('keyup', handleKeyup);
         }
         if (customOptions.value.backdrop) {
-          window.removeEventListener('scroll', handleScroll);
+          window.removeEventListener('scroll', handleTargetPosition);
           window.removeEventListener('resize', handleResize);
         }
       });
